@@ -1,0 +1,30 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    
+    <title>{% block title %}{% endblock %}</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    
+    <link href="{{ url_for('static', filename='theme.css') }}" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Questions & Answers</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            {% block nav %}{% endblock %}
+
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+    <div class="container theme-showcase" role="main">
+        {% block body %}{% endblock %}
+    
+    </div>
+</body>
+</html>
